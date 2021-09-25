@@ -92,7 +92,7 @@ fetch("https://covid-api.mmediagroup.fr/v1/cases")
                 container.innerHTML="";
             if(page>=1){
                 for (let i=page*rows-rows;i<page*rows;i++){
-                    
+                    let name=arr[i]
                     let div=document.createElement("div");
                     div.setAttribute("class","card")
                     let country=document.createElement("h2");
