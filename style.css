@@ -109,11 +109,24 @@ button:focus {
 }
 
 @media (max-width: 600px) {
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
   button {
     margin: 5px;
     padding: 8px;
     border: none;
     border-radius: 10px;
     font-size: 10px;
+  }
+  header {
+    height: 10vh;
+  }
+  .container {
+    height: 80vh;
+  }
+  .btn-container {
+    height: 10vh;
   }
 }
