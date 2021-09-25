@@ -28,6 +28,7 @@ h1 {
   text-align: center;
   color: rgb(21, 104, 107);
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  cursor: pointer;
 }
 h2 {
   text-align: center;
