@@ -173,7 +173,6 @@ fetch("https://covid-api.mmediagroup.fr/v1/cases")
 }).catch(err=>{
     console.log(err)
 })
-
 // funtion to display data corresponding to the page
 function content(data,arr,page,rows){
     let container=document.querySelector(".container")
@@ -192,16 +191,20 @@ function content(data,arr,page,rows){
         lifeExp.setAttribute("class","lifeExp")
         let population=document.createElement("p");
         population.setAttribute("class","population")
+        let updated=document.createElement("p");
+        updated.setAttribute("class","updated")
         country.innerText=`${data[name].All.country}`;
         population.innerHTML=`Population: <span>${data[name].All.population}</span>`;
         confirmed.innerHTML=`Confirmed Cases: <span>${data[name].All.confirmed}</span>`;
         deaths.innerHTML=`Deaths: <span>${data[name].All.deaths}</span>`;
         lifeExp.innerHTML=`Life-Expectency: <span>${data[name].All.life_expectancy}%</span>`
+        updated.innerHTML=`Updated: <span>${data[name].All.updated.split(" ")[0]}</span>`
         div.appendChild(country)
         div.appendChild(population)
         div.appendChild(confirmed)
         div.appendChild(deaths)
         div.appendChild(lifeExp)
+        div.appendChild(updated)
         container.append(div);
     }
 }
