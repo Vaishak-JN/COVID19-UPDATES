@@ -336,6 +336,50 @@ fetch("https://covid-api.mmediagroup.fr/v1/cases")
             console.log(page)
     }
     window.onload=firstData()
+    
+    h1=document.querySelector("h1");
+    h1.addEventListener("click",()=>{
+        btn1.innerText="1";
+                    btn2.innerText="2";
+                    btn3.innerText="3";
+                    btn4.innerText="4";
+                    btn5.innerText="5";
+                
+                page=1;
+
+            let container=document.querySelector(".container")
+                container.innerHTML="";
+            for (let i=page*rows-rows;i<page*rows;i++){
+                let name=arr[i]
+                // console.log(data)
+                // console.log(name)
+                
+                let div=document.createElement("div");
+                div.setAttribute("class","card")
+                let country=document.createElement("h2");
+                country.setAttribute("class","country")
+                let confirmed=document.createElement("p");
+                confirmed.setAttribute("class","confirmed");
+                let deaths=document.createElement("p");
+                deaths.setAttribute("class","deaths");
+                let lifeExp=document.createElement("p");
+                lifeExp.setAttribute("class","lifeExp")
+                let population=document.createElement("p");
+                population.setAttribute("class","population")
+                country.innerText=`${data[name].All.country}`;
+                population.innerHTML=`Population: <span>${data[name].All.population}</span>`;
+                confirmed.innerHTML=`Confirmed Cases: <span>${data[name].All.confirmed}</span>`;
+                deaths.innerHTML=`Deaths: <span>${data[name].All.deaths}</span>`;
+                lifeExp.innerHTML=`Life-Expectency: <span>${data[name].All.life_expectancy}%</span>`
+                div.appendChild(country)
+                div.appendChild(population)
+                div.appendChild(confirmed)
+                div.appendChild(deaths)
+                div.appendChild(lifeExp)
+                container.append(div);
+            }
+            btn1.focus()
+    })
 }).catch(err=>{
     console.log(err)
 })
