@@ -47,7 +47,6 @@ span {
 }
 .container {
   padding: 10px 0 30px 0;
-
   display: grid;
   justify-items: center;
   align-items: center;
@@ -107,7 +106,9 @@ button:focus {
   color: rgba(245, 242, 233, 0.925);
   transform: scale(1.1);
 }
-
+h1 i {
+  color: orange;
+}
 @media (max-width: 600px) {
   body {
     height: 100vh;
@@ -130,3 +131,4 @@ button:focus {
     height: 10vh;
   }
 }
+
